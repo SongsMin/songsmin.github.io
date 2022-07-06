@@ -1,37 +1,60 @@
-## Welcome to GitHub Pages
+## 松松🐿‘s blog
 
-You can use the [editor on GitHub](https://github.com/SongsMin/songsmin.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+### Open Source OS Training 2022 - Weekly
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+#### W0 (20220705 - 20220710)
 
-### Markdown
+- targets
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+  刷 rustlings，复习 rust 基础
+  | Exercise               | Book Chapter | Done |
+  |------------------------|--------------|------|
+  | variables              | §3.1         | √    |
+  | functions              | §3.3         | √    |
+  | if                     | §3.5         | √    |
+  | move_semantics         | §4.1         | √    |
+  | primitive_types        | §4.3         | √    |
+  | structs                | §5.1         |      |
+  | enums                  | §6           |      |
+  | modules                | §7           |      |
+  | collections            | §8.1, §8.3   |      |
+  | strings                | §8.2         |      |
+  | error_handling         | §9           |      |
+  | generics               | §10          |      |
+  | option                 | §10.1        |      |
+  | traits                 | §10.2        |      |
+  | tests                  | §11.1        |      |
+  | standard_library_types | §13.2        |      |
+  | threads                | §16.1        |      |
+  | macros                 | §19.6        |      |
+  | clippy                 | n/a          |      |
+  | conversions            | n/a          |      |
 
-```markdown
-Syntax highlighted code block
+- daily
 
-# Header 1
-## Header 2
-### Header 3
+  - 2022-07-06
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/SongsMin/songsmin.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+    rustlings - 安装 rustlings 并熟悉用法，完成 intro, variables, functions, if, move_semantics, primitive_types 练习。
+    
+    - move_semantics2
+    
+      hint 提示三种方法，提供一个 copy 给 ```fill_vec``` 避免所有权转移、改为传 borrow 在 ```fill_vec``` 内生成一个副本、改为传 mutable borrow 在 ```fill_vec``` 内直接改（但不返回，同时会造成 ```vec0``` 被改变）。
+    
+      第三种尚未实验。
+    
+    - primitive_types3
+    
+      题目本意是数组类型，但注意到 ```ExactSizeIterator``` trait 同样具有 ```len``` 方法，某些 ```Range```/```RangeInclusive``` 同样可以通过编译。
+    
+      练习时发现直接
+    
+      ```rust
+      let a = 0..=99;
+      if a.len() >= 100 {
+          ...
+      }
+      ```
+    
+      无法通过编译，报错提示 ```RangeInclusive<i32>``` 未实现 ```ExactSizeIterator``` trait，而 ```RangeInclusive<i16>``` 等进行了实现，查阅了标准库 iter/range.rs 部分代码后了解到是由于 ```ExactSizeIterator::len``` 返回类型是 ```usize```，为防止越界而未对可能越界的数字类型进行 impl。
+    
+      同时也注意到，在 16 位平台下，```Range<u32>```、```Range<i32>```、```RangeInclusive<u16>```、```RangeInclusive<i16>``` 依然可能产生越界问题，在实践中应注意。
