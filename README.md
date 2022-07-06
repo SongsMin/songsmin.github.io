@@ -6,7 +6,7 @@
 
 - targets
 
-  刷 rustlings，复习 rust 基础
+  刷 rustlings，复习 rust 基础  
   | Exercise               | Book Chapter | Done |
   |------------------------|--------------|------|
   | variables              | §3.1         | √    |
