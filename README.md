@@ -20,10 +20,10 @@
   | collections            | §8.1, §8.3   | √    |
   | strings                | §8.2         | √    |
   | error_handling         | §9           | √    |
-  | generics               | §10          |      |
-  | option                 | §10.1        |      |
-  | traits                 | §10.2        |      |
-  | tests                  | §11.1        |      |
+  | generics               | §10          | √    |
+  | option                 | §10.1        | √    |
+  | traits                 | §10.2        | √    |
+  | tests                  | §11.1        | √    |
   | standard_library_types | §13.2        |      |
   | threads                | §16.1        |      |
   | macros                 | §19.6        |      |
@@ -32,8 +32,14 @@
 
 - daily
 
-  - 2022-07-07
+  - 2022-07-08
 
+    rustlings - 完成 generics, option, traits, tests 练习。
+  
+    今天下班太晚，只练了半小时。明天争取收尾 rustlings。
+  
+  - 2022-07-07
+  
     rustlings - 完成 structs, enums, modules, vec, hashmap, strings, errors 练习。
   
     errors 忘太快，深刻复习了一遍。
