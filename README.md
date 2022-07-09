@@ -24,16 +24,33 @@
   | option                 | §10.1        | √    |
   | traits                 | §10.2        | √    |
   | tests                  | §11.1        | √    |
-  | standard_library_types | §13.2        |      |
-  | threads                | §16.1        |      |
-  | macros                 | §19.6        |      |
-  | clippy                 | n/a          |      |
-  | conversions            | n/a          |      |
+  | standard_library_types | §13.2        | √    |
+  | threads                | §16.1        | √    |
+  | macros                 | §19.6        | √    |
+  | clippy                 | n/a          | √    |
+  | conversions            | n/a          | √    |
+  | advance_errors         | n/a          | √    |
 
 - daily
 
-  - 2022-07-08
+  - 2022-07-09
 
+    rustlings - 完成 standard_library_types(Box, Arc, Iter), threads(Arc and Mutex), macros, clippy, conversions, advance_errors 练习，当前所有 rustlings 均已完成。
+  
+    Box 是一种把“内容”丢到堆上的智能指针，常用于举例的一个应用场景是链表结构。扩展阅读：双向链表与 Weak 智能指针。
+  
+    Arc/Rc，引用计数智能指针，Arc impl 了 Send 可用于线程间，生命周期结束后引用计数 -1。
+  
+    Mutex/RwLock，带锁智能指针，生命周期结束后解锁，类似 Java AutoClosable，通过 rust 的生命周期管理更不易错。注意同一个 Mutex 在同一线程内重复 lock 会死锁。
+  
+    ```From<T> for U``` impl 了 ```Into<U> for T```，同理 ```TryFrom<T> for U``` impl 了 ```TryInto<U> for T```，因此如非必要写 From/TryFrom 就行了，Into/TryInto 自动完成。
+  
+    advance_errors 通过实现 From trait 把手动 Result<T, E1>.map_err(e1_to_e2)? 简化了。另外 error handle 可以参考 [thiserror](https://github.com/dtolnay/thiserror) 和 [anyhow](https://github.com/dtolnay/anyhow) 两个库。
+  
+    rust 复习暂时告一段落，重点先转移到 OS 学习。
+  
+  - 2022-07-08
+  
     rustlings - 完成 generics, option, traits, tests 练习。
   
     今天下班太晚，只练了半小时。明天争取收尾 rustlings。
