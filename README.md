@@ -2,6 +2,24 @@
 
 ### Open Source OS Training 2022 - Weekly
 
+#### W1 (20220711 - 20220717)
+
+- targets
+
+  复习计算机组成原理，学习 RISC-V 体系，搭环境，完成实验。
+
+- daily
+
+  - 2022-07-11
+
+    lab0-0，设置环境并尝试跑起来。
+
+    分别在 codespace 和本地 Ubuntu (on WSL2) 各搭了一遍，查看 Makefile，对比精简 OS 实验指导第 0 章了解基本环境。
+
+    阅读《计算机组成与设计》前两章，上 B 站看浙大课程。
+
+    依然比较懵，qemu 不咋会用，去年尝试自己玩的时候用 qemu for windows 并没有跑起来，现在在 ubuntu 上跑起来了还没搞明白为啥。边实践边学吧。
+
 #### W0 (20220705 - 20220710)
 
 - targets
@@ -33,8 +51,12 @@
 
 - daily
 
-  - 2022-07-09
+  - 2022-07-10
 
+    周末休息 ```(*^_^*)``` 淘二手《计算机组成与设计：硬件/软件接口 RISC-V 版》
+  
+  - 2022-07-09
+  
     rustlings - 完成 standard_library_types(Box, Arc, Iter), threads(Arc and Mutex), macros, clippy, conversions, advance_errors 练习，当前所有 rustlings 均已完成。
   
     Box 是一种把“内容”丢到堆上的智能指针，常用于举例的一个应用场景是链表结构。扩展阅读：双向链表与 Weak 智能指针。
